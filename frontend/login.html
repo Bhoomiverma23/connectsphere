@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - ConnectSphere</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/lucide-icons"></script>
+</head>
+
+<body class="auth-page">
+    
+    <div class="auth-container">
+        <h2>Log In to ConnectSphere</h2>
+        
+        <form action="#" method="POST">
+            
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="********" required>
+            </div>
+            
+            <button type="submit">Log In</button>
+        </form>
+
+        <p class="switch-auth">
+            Don't have an account? <a href="signup.html">Sign Up</a>
+        </p>
+        <p class="switch-auth">
+            <a href="index.html">Go back to Home</a>
+        </p>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
