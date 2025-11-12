@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Startup Toolkit | ConnectSphere</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="startuptoolkit.js" defer></script>
+  <style>
+    /* 🌟 ConnectSphere - Startup Toolkit Page */
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #fff;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* --- Hero Section --- */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(90deg, #ff4fd8, #a100ff);
+      color: #fff;
+      border-radius: 0 0 60px 60px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* --- Toolkit Section --- */
+    .toolkit {
+      padding: 70px 50px;
+      text-align: center;
+    }
+
+    .toolkit h2 {
+      font-size: 2rem;
+      color: #a100ff;
+      margin-bottom: 40px;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 35px;
+      justify-items: center;
+    }
+
+    .tool-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 25px 20px;
+      width: 100%;
+      max-width: 320px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(255, 79, 216, 0.25);
+    }
+
+    .tool-card h3 {
+      font-size: 1.3rem;
+      color: #a100ff;
+      margin-bottom: 10px;
+    }
+
+    .tool-card p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    .tool-card button {
+      background: linear-gradient(90deg, #ff4fd8, #a100ff);
+      color: #fff;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .tool-card button:hover {
+      background: linear-gradient(90deg, #a100ff, #ff4fd8);
+      transform: scale(1.05);
+    }
+
+    /* --- Template Section --- */
+    .resources {
+      padding: 70px 50px;
+      background: #fafafa;
+      text-align: center;
+    }
+
+    .resources h2 {
+      color: #a100ff;
+      margin-bottom: 25px;
+      font-size: 2rem;
+    }
+
+    .resources-list {
+      background: #fff;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      font-weight: 500;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    /* --- YouTube / External Links --- */
+    .youtube {
+      padding: 70px 50px;
+      text-align: center;
+    }
+
+    .youtube h2 {
+      font-size: 2rem;
+      color: #a100ff;
+      margin-bottom: 40px;
+    }
+
+    .youtube-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 30px;
+      justify-items: center;
+    }
+
+    .yt-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      width: 100%;
+      max-width: 260px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+    }
+
+    .yt-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(161, 0, 255, 0.2);
+    }
+
+    .yt-card h3 {
+      color: #a100ff;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    .yt-card a {
+      display: block;
+      color: #ff4fd8;
+      font-weight: 500;
+      margin: 4px 0;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .yt-card a:hover {
+      color: #a100ff;
+      text-decoration: underline;
+    }
+
+    /* --- Footer --- */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #fff;
+      border-top: 1px solid #eee;
+      color: #777;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Startup Toolkit 🚀</h1>
+    <p>Find templates, idea validation sheets, and pitch deck frameworks to kickstart your projects.</p>
+  </section>
+
+  <!-- Toolkit Cards -->
+  <section class="toolkit">
+    <h2>Explore Startup Essentials</h2>
+    <div class="card-container" id="toolContainer"></div>
+  </section>
+
+  <!-- Resource / Template Overview -->
+  <section class="resources">
+    <h2>Toolkit Overview</h2>
+    <div class="resources-list" id="resource-content">
+      Select a toolkit to explore its resources.
+    </div>
+  </section>
+
+  <!-- YouTube / Community -->
+  <section class="youtube">
+    <h2>Startup Learning & Community</h2>
+    <div class="youtube-grid">
+      <div class="yt-card">
+        <h3>Entrepreneurship Guides</h3>
+        <a href="https://www.youtube.com/@ycombinator" target="_blank">Y Combinator</a>
+        <a href="https://www.youtube.com/@AnkurWarikoo" target="_blank">Ankur Warikoo</a>
+        <a href="https://www.youtube.com/@Slidebean" target="_blank">Slidebean - Pitch Deck Tips</a>
+      </div>
+
+      <div class="yt-card">
+        <h3>Startup Tools</h3>
+        <a href="https://www.youtube.com/@HubSpot" target="_blank">HubSpot for Startups</a>
+        <a href="https://www.youtube.com/@TechCrunch" target="_blank">TechCrunch</a>
+        <a href="https://www.youtube.com/@FinanciallyIncorrect" target="_blank">Financially Incorrect</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 ConnectSphere | Learn. Connect. Grow.</p>
+  </footer>
+
+  <script>
+    const toolkitData = [
+      {
+        title: "Idea Validation Sheet",
+        desc: "Validate your startup idea using customer feedback, market size, and competitor analysis.",
+        details: [
+          "Target Audience Research Template",
+          "Problem-Solution Fit Sheet",
+          "Market Feasibility Checklist"
+        ]
+      },
+      {
+        title: "Pitch Deck Framework",
+        desc: "Build a stunning pitch deck using proven templates from top startups.",
+        details: [
+          "10-Slide Deck Template (Guy Kawasaki Style)",
+          "Investor Storytelling Tips",
+          "Design Tools & Free Assets"
+        ]
+      },
+      {
+        title: "Business Model Canvas",
+        desc: "Map out your business idea using the Lean Canvas and BMC frameworks.",
+        details: [
+          "Editable Lean Canvas PDF",
+          "Revenue Model Planner",
+          "Value Proposition Template"
+        ]
+      },
+      {
+        title: "Funding & Investors",
+        desc: "Find angel networks, venture capital resources, and funding prep guides.",
+        details: [
+          "List of Indian Angel Networks",
+          "VC Pitch Checklist",
+          "Funding Readiness Worksheet"
+        ]
+      },
+      {
+        title: "Startup Resources",
+        desc: "Essential tools for early-stage founders to plan, organize, and grow.",
+        details: [
+          "Notion Startup OS Template",
+          "Legal Docs (NDA, Cofounder Agreement)",
+          "Community Forums & Events"
+        ]
+      }
+    ];
+
+    const container = document.getElementById("toolContainer");
+    const resourceContent = document.getElementById("resource-content");
+
+    // Auto-generate cards
+    container.innerHTML = toolkitData.map(tool => `
+      <div class="tool-card">
+        <h3>${tool.title}</h3>
+        <p>${tool.desc}</p>
+        <button onclick='showResources(${JSON.stringify(tool.details)})'>Explore</button>
+      </div>
+    `).join("");
+
+    // Display toolkit details
+    function showResources(details) {
+      resourceContent.innerHTML = `
+        <ul style="text-align:left; list-style: none; padding: 0;">
+          ${details.map(item => `<li>🔹 ${item}</li>`).join("")}
+        </ul>
+      `;
+      window.scrollTo({ top: resourceContent.offsetTop, behavior: "smooth" });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learning Hub | ConnectSphere</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="learninghub.js" defer></script>
+</head>
+<style>
+    /* ---------------------------
+   🌐 Learning Hub Page Styling
+---------------------------- */
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Hero Section --- */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(90deg, #a100ff, #ff4fd8);
+  color: #fff;
+  border-radius: 0 0 60px 60px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* --- Courses Section --- */
+.courses {
+  padding: 70px 50px;
+  text-align: center;
+}
+
+.courses h2 {
+  font-size: 2rem;
+  color: #a100ff;
+  margin-bottom: 40px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 35px;
+  justify-items: center;
+}
+
+.course-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 25px 20px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(161, 0, 255, 0.25);
+}
+
+.course-card h3 {
+  font-size: 1.3rem;
+  color: #a100ff;
+  margin-bottom: 10px;
+}
+
+.course-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.course-card button {
+  background: linear-gradient(90deg, #a100ff, #ff4fd8);
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.course-card button:hover {
+  background: linear-gradient(90deg, #ff4fd8, #a100ff);
+  transform: scale(1.05);
+}
+
+/* --- Roadmap Section --- */
+.roadmaps {
+  padding: 70px 50px;
+  background: #fafafa;
+  text-align: center;
+}
+
+.roadmaps h2 {
+  color: #a100ff;
+  margin-bottom: 25px;
+  font-size: 2rem;
+}
+
+#roadmap-content {
+  background: #fff;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  font-weight: 500;
+  line-height: 1.6;
+  color: #555;
+}
+
+.hidden {
+  display: none;
+}
+
+/* --- YouTube Section --- */
+.youtube {
+  padding: 70px 50px;
+  text-align: center;
+}
+
+.youtube h2 {
+  font-size: 2rem;
+  color: #a100ff;
+  margin-bottom: 40px;
+}
+
+.youtube-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.yt-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  width: 100%;
+  max-width: 260px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.yt-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(161, 0, 255, 0.2);
+}
+
+.yt-card h3 {
+  color: #a100ff;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.yt-card a {
+  display: block;
+  color: #ff4fd8;
+  font-weight: 500;
+  margin: 4px 0;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.yt-card a:hover {
+  color: #a100ff;
+  text-decoration: underline;
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #fff;
+  border-top: 1px solid #eee;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+</style>
+<body>
+  <section class="hero">
+    <h1>Learning Hub</h1>
+    <p>Curated learning paths and resources to grow your skills and connect with opportunities.</p>
+  </section>
+
+  <section class="courses">
+    <h2>Explore Courses</h2>
+    <div class="card-container">
+      <div class="course-card">
+        <h3>Web Development</h3>
+        <p>Master HTML, CSS, JavaScript, React & Node.js from basics to advanced.</p>
+        <button onclick="showRoadmap('web')">View Roadmap</button>
+      </div>
+
+      <div class="course-card">
+        <h3>UI/UX Design</h3>
+        <p>Learn Figma, wireframing, design thinking & build stunning interfaces.</p>
+        <button onclick="showRoadmap('uiux')">View Roadmap</button>
+      </div>
+
+      <div class="course-card">
+        <h3>AI & Machine Learning</h3>
+        <p>Understand Python, ML models, AI tools & real-world applications.</p>
+        <button onclick="showRoadmap('ai')">View Roadmap</button>
+      </div>
+
+      <div class="course-card">
+        <h3>Entrepreneurship</h3>
+        <p>Learn idea validation, MVP building, pitching & startup strategy.</p>
+        <button onclick="showRoadmap('startup')">View Roadmap</button>
+      </div>
+
+      <div class="course-card">
+        <h3>DSA & Problem Solving</h3>
+        <p>Sharpen your logic and prepare for coding rounds with DSA mastery.</p>
+        <button onclick="showRoadmap('dsa')">View Roadmap</button>
+      </div>
+
+      <div class="course-card">
+        <h3>Soft Skills</h3>
+        <p>Develop communication, leadership, and teamwork skills to stand out.</p>
+        <button onclick="showRoadmap('soft')">View Roadmap</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="roadmaps" class="roadmaps hidden">
+    <h2>Roadmap Overview</h2>
+    <div id="roadmap-content"></div>
+  </section>
+
+  <section class="youtube">
+    <h2>YouTube Learning Playlists</h2>
+    <div class="youtube-grid">
+      <div class="yt-card">
+        <h3>Web Development</h3>
+        <a href="https://www.youtube.com/c/Freecodecamp" target="_blank">FreeCodeCamp</a>
+        <a href="https://www.youtube.com/c/TraversyMedia" target="_blank">Traversy Media</a>
+        <a href="https://www.youtube.com/playlist?list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w" target="_blank">Code With Harry</a>
+        <a href="https://www.youtube.com/playlist?list=PLDzeHZWIZsTo0wSBcg4-NMIbC0L8evLrD" target="_blank">CodeHelp-by Babbar</a>
+      </div>
+
+      <div class="yt-card">
+        <h3>UI/UX Design</h3>
+        <a href="https://www.youtube.com/@DesignCourse" target="_blank">DesignCourse</a>
+        <a href="https://www.youtube.com/@Mizko" target="_blank">Mizko (Figma)</a>
+        <a href="https://www.youtube.com/@AJSmart" target="_blank">AJ&Smart</a>
+        <a href="https://www.youtube.com/playlist?list=PLdvOfoe7PXT0ouChAnR1nHlT8BJIo5hP_" target="_blank">Ali Hassan</a>
+      </div>
+
+      <div class="yt-card">
+        <h3>AI & ML</h3>
+        <a href="https://www.youtube.com/@KrishNaik" target="_blank">Krish Naik</a>
+        <a href="https://www.youtube.com/@codebasics" target="_blank">Codebasics</a>
+        <a href="https://www.youtube.com/playlist?list=PLdvRS3dZP77LZAU2YcwoX1yNmMpNtlpkR" target="_blank">freeCodeCamp — AI/ML Videos</a>
+        <a href="https://www.youtube.com/playlist?list=PL9ooVrP1hQOGHNaCT7_fwe9AabjZI1RjI" target="_blank">Edureka</a>
+      </div>
+
+      <div class="yt-card">
+        <h3>DSA</h3>
+        <a href="https://www.youtube.com/@takeUforward" target="_blank">Striver (Take U Forward)</a>
+        <a href="https://www.youtube.com/@LoveBabbar" target="_blank">Love Babbar</a>
+        <a href="https://www.youtube.com/@LoveBabbar" target="_blank">C++ DSA Course - Apna College </a>
+        <a href="https://www.youtube.com/@LoveBabbar" target="_blank">Anuj Kumar Sharma </a>
+      </div>
+
+      <div class="yt-card">
+        <h3>Entrepreneurship</h3>
+        <a href="https://www.youtube.com/@ycombinator" target="_blank">Y Combinator</a>
+        <a href="https://www.youtube.com/@AnkurWarikoo" target="_blank">Ankur Warikoo</a>
+        <a href="https://www.youtube.com/playlist?list=PLMjEXFH8-VmiQIzPQXWNUYIkPniKAvFeW" target="_blank">Financially Incorrect</a>
+      </div>
+
+      <div class="yt-card">
+        <h3>Soft Skills</h3>
+        <a href="https://www.youtube.com/@TED" target="_blank">TED Talks</a>
+        <a href="https://www.youtube.com/@CommunicationCoachAlexLyon" target="_blank">Alex Lyon</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 ConnectSphere | Learn. Connect. Grow.</p>
+  </footer>
+  <script>
+    const roadmapData = {
+  web: ["HTML → CSS → JavaScript → Git/GitHub → React → Node.js"],
+  uiux: ["Design Basics → Figma → Wireframes → Prototyping → Portfolio"],
+  ai: ["Python → NumPy/Pandas → ML Models → Projects → Kaggle"],
+  dsa: ["Arrays → Strings → Linked List → Trees → Dynamic Programming"],
+  startup: ["Idea → Validation → MVP → Funding → Launch"],
+  soft: ["Communication → Leadership → Teamwork → Presentation"],
+};
+
+function showRoadmap(category) {
+  const roadmapSection = document.getElementById("roadmaps");
+  const content = document.getElementById("roadmap-content");
+  roadmapSection.classList.remove("hidden");
+  content.innerHTML = `<p>${roadmapData[category]}</p>`;
+  window.scrollTo({ top: roadmapSection.offsetTop, behavior: "smooth" });
+}
+
+  </script>
+</body>
+</html>

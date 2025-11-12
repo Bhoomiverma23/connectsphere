@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Networking Guide | ConnectSphere</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="networking.js" defer></script>
+</head>
+
+<style>
+/* ---------------------------
+ 🌐 Networking Guide Styling
+---------------------------- */
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Hero Section --- */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(90deg, #a100ff, #ff4fd8);
+  color: #fff;
+  border-radius: 0 0 60px 60px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* --- Smart Match Section --- */
+.matches {
+  padding: 70px 50px;
+  text-align: center;
+}
+
+.matches h2 {
+  font-size: 2rem;
+  color: #a100ff;
+  margin-bottom: 40px;
+}
+
+.match-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 35px;
+  justify-items: center;
+}
+
+.match-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 25px 20px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.match-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(161, 0, 255, 0.25);
+}
+
+.match-card h3 {
+  font-size: 1.3rem;
+  color: #a100ff;
+  margin-bottom: 8px;
+}
+
+.match-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.match-card button {
+  background: linear-gradient(90deg, #a100ff, #ff4fd8);
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.match-card button:hover {
+  background: linear-gradient(90deg, #ff4fd8, #a100ff);
+  transform: scale(1.05);
+}
+
+/* --- Circles Section --- */
+.circles {
+  padding: 70px 50px;
+  background: #fafafa;
+  text-align: center;
+}
+
+.circles h2 {
+  color: #a100ff;
+  margin-bottom: 25px;
+  font-size: 2rem;
+}
+
+.circle-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 35px;
+  justify-items: center;
+}
+
+.circle-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 25px 20px;
+  max-width: 320px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.circle-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(161, 0, 255, 0.25);
+}
+
+/* --- Daily Challenge --- */
+.challenge {
+  padding: 70px 50px;
+  text-align: center;
+}
+
+.challenge h2 {
+  font-size: 2rem;
+  color: #a100ff;
+  margin-bottom: 30px;
+}
+
+.challenge-box {
+  background: #fff;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.challenge-box p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.challenge-box button {
+  background: linear-gradient(90deg, #a100ff, #ff4fd8);
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.challenge-box button:hover {
+  background: linear-gradient(90deg, #ff4fd8, #a100ff);
+  transform: scale(1.05);
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #fff;
+  border-top: 1px solid #eee;
+  color: #777;
+  font-size: 0.9rem;
+}
+</style>
+
+<body>
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Networking Guide</h1>
+    <p>Expand your circle, find like-minded individuals, and grow your professional journey with meaningful connections.</p>
+  </section>
+
+  <!-- Smart Match Section -->
+  <section class="matches">
+    <h2>Smart Match Recommendations</h2>
+    <div class="match-container" id="match-container">
+      <!-- Cards added dynamically -->
+    </div>
+  </section>
+
+  <!-- Interest Circles -->
+  <section class="circles">
+    <h2>Join Interest Circles</h2>
+    <div class="circle-container">
+      <div class="circle-card">
+        <h3>Web Wizards</h3>
+        <p>Connect with developers passionate about full-stack projects and innovation.</p>
+        <button>Join Circle</button>
+      </div>
+      <div class="circle-card">
+        <h3>AI Innovators</h3>
+        <p>Collaborate with enthusiasts exploring machine learning and data science.</p>
+        <button>Join Circle</button>
+      </div>
+      <div class="circle-card">
+        <h3>Design Thinkers</h3>
+        <p>Exchange ideas and create user-centric designs with UI/UX professionals.</p>
+        <button>Join Circle</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Daily Challenge -->
+  <section class="challenge">
+    <h2>Daily Networking Challenge</h2>
+    <div class="challenge-box">
+      <p id="challenge-text">Loading your challenge...</p>
+      <button onclick="generateChallenge()">Get New Challenge</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 ConnectSphere | Learn. Connect. Grow.</p>
+  </footer>
+
+  <script>
+  // Dynamic smart matches
+  const matchData = [
+    { name: "Divya Yadav", field: "AI Developer", skills: "Python, TensorFlow, ML" },
+    { name: "Riya Mehta", field: "UI/UX Designer", skills: "Figma, Prototyping, UX Research" },
+    { name: "Karan Patel", field: "Full Stack Developer", skills: "React, Node.js, MongoDB" },
+    { name: "Aarav Sharma", field: "Entrepreneur", skills: "Startups, Pitching, Strategy" },
+  ];
+
+  const matchContainer = document.getElementById("match-container");
+
+  matchData.forEach((person) => {
+    matchContainer.innerHTML += `
+      <div class="match-card">
+        <h3>${person.name}</h3>
+        <p><strong>${person.field}</strong></p>
+        <p>${person.skills}</p>
+        <button>Connect</button>
+      </div>
+    `;
+  });
+
+  // Daily challenge generator
+  const challenges = [
+    "Connect with one new person today 👋",
+    "Join a new interest circle 🌐",
+    "Appreciate someone’s work post ❤️",
+    "Share your current project in a group 💡",
+    "Send a follow-up message to a past connection 💬"
+  ];
+
+  function generateChallenge() {
+    const random = challenges[Math.floor(Math.random() * challenges.length)];
+    document.getElementById("challenge-text").textContent = random;
+  }
+
+  generateChallenge();
+  </script>
+</body>
+</html>
