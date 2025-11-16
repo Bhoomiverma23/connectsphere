@@ -184,7 +184,8 @@
   <script>
     async function loadEvents() {
       try {
-        const res = await fetch("https://connectsphere-zk6v.onrender.com/api/events");
+        const res = await fetch("https://connectsphere-zk6v.onrender.com/api/events/upcoming");
+
         if (!res.ok) throw new Error("Failed to fetch events");
         const allEvents = await res.json();
 
