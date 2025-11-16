@@ -3,29 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ConnectSphere - Find Your Next Co-Pilot</title>
+  <title>ConnectSphere - Build Meaningful Connections</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://unpkg.com/lucide-icons"></script>
 </head>
 
 <body>
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">Connect<span>Sphere</span></div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="circle.html">Circle</a></li>
-      </ul>
-    </nav>
-    <div class="auth-buttons">
-      <a href="login.html" class="btn-outline">Login</a>
-      <a href="signup.html" class="btn-primary">Sign Up</a>
-    </div>
-  </header>
+<!-- Navbar -->
+<header class="navbar">
+  <div class="logo">Connect<span>Sphere</span></div>
+  
+  <!-- Add this mobile menu button -->
+  <button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+    ☰
+  </button>
+  
+  <nav>
+    <ul id="navMenu">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="events.html">Events</a></li>
+    </ul>
+  </nav>
+  <div class="auth-buttons">
+    <a href="login.html" class="btn-outline">Login</a>
+    <a href="signup.html" class="btn-primary">Sign Up</a>
+  </div>
+</header>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -36,12 +40,10 @@
       </p>
       <div class="hero-buttons">
         <a href="signup.html" class="btn-primary">Get Started</a>
-        <a href="about.html" class="btn-outline">Learn More</a>
       </div>
-
     </div>
     <div class="hero-img">
-      <img src="assets\images\main.jpg" alt="Networking" />
+      <img src="assets/images/main.jpg" alt="Networking" />
     </div>
   </section>
 
@@ -52,44 +54,122 @@
       <div class="feature">
         <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Match" />
         <h3>Smart Matching</h3>
-        <p>Get matched with people who share your ambitions using AI-powered recommendations.</p>
+        <p>Get matched with people who share your ambitions using AI-powered recommendations. <em>(Coming Soon)</em></p>
       </div>
       <div class="feature">
         <img src="https://cdn-icons-png.flaticon.com/512/2620/2620618.png" alt="Chat" />
         <h3>Instant Messaging</h3>
-        <p>Chat instantly with mentors, teammates, or collaborators inside the platform.</p>
+        <p>Chat instantly with mentors, teammates, or collaborators inside the platform. <em>(Coming Soon)</em></p>
       </div>
       <div class="feature">
         <img src="https://cdn-icons-png.flaticon.com/512/4563/4563899.png" alt="Events" />
         <h3>Events & Circles</h3>
         <p>Join events, build circles, and grow your professional network effortlessly.</p>
       </div>
-      <div class="feature">
-        <img src="https://cdn-icons-png.flaticon.com/512/1903/1903162.png" alt="Portfolio" />
-        <h3>Personal Portfolio</h3>
-        <p>Showcase your skills, achievements, and projects to attract opportunities.</p>
+    </div>
+  </section>
+
+
+  <!-- Mission & Vision Section -->
+  <section class="mission">
+    <h2>Our Mission & Vision</h2>
+    <div class="mission-cards">
+      <div class="mission-card">
+        <i data-lucide="target"></i>
+        <h3>Our Mission</h3>
+        <p>
+          To make networking meaningful, simple, and accessible — helping people share ideas and build opportunities together.
+        </p>
+      </div>
+      <div class="mission-card">
+        <i data-lucide="eye"></i>
+        <h3>Our Vision</h3>
+        <p>
+          To create a community-driven space where collaboration sparks innovation and everyone can find the right circle to grow with.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- Popular Circles Section -->
-  <section class="popular">
-    <h2>Discover Circles You Can Join</h2>
-    <div class="card-grid">
-      <div class="card">
-        <img src="https://cdn-icons-png.flaticon.com/512/921/921490.png" alt="Tech Innovators" />
-        <h4>Tech Innovators</h4>
-        <p>Be among the first to join a circle for coders and creators building future tech.</p>
+  <!-- Story Section -->
+  <section class="story">
+    <h2>How It All Started</h2>
+    <div class="story-content">
+      <img src="https://cdn-icons-png.flaticon.com/512/5950/5950923.png" alt="Team Collaboration" />
+      <p>
+        ConnectSphere began with a simple idea — to make networking more genuine and approachable.
+        We noticed that most platforms felt too formal, making it hard for students and creators to connect naturally.<br /><br />
+        So, we built ConnectSphere as a friendly space where people can meet others who share their goals, collaborate on ideas, and grow together.
+        Our aim is to create a safe, inclusive, and inspiring community that values real conversations, creativity, and mutual growth.
+      </p>
+    </div>
+  </section>
+
+  <!-- Core Values Section -->
+  <section class="values">
+    <h2>Our Core Values</h2><br />
+    <div class="values-grid">
+      <div class="value-card">
+        <i data-lucide="handshake"></i>
+        <h3>Collaboration</h3>
+        <p>We believe in the power of teamwork — together, we can achieve meaningful impact and lasting growth.</p>
       </div>
-      <div class="card">
-        <img src="https://cdn-icons-png.flaticon.com/512/3588/3588631.png" alt="Women in Tech" />
-        <h4>Women in Tech</h4>
-        <p>Connect and collaborate with aspiring women entering the tech world.</p>
+      <div class="value-card">
+        <i data-lucide="trending-up"></i>
+        <h3>Growth</h3>
+        <p>Every connection is an opportunity to learn, improve, and evolve — both personally and professionally.</p>
       </div>
-      <div class="card">
-        <img src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png" alt="Design Thinkers" />
-        <h4>Design Thinkers</h4>
-        <p>Join a space for students passionate about creativity, UX, and innovation.</p>
+      <div class="value-card">
+        <i data-lucide="users"></i>
+        <h3>Inclusivity</h3>
+        <p>We celebrate diversity and ensure that everyone feels welcomed, heard, and supported within our circles.</p>
+      </div>
+      <div class="value-card">
+        <i data-lucide="lightbulb"></i>
+        <h3>Innovation</h3>
+        <p>We continuously evolve, combining technology with empathy to create smarter, human-centered networking experiences.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team">
+    <h2>Meet the Minds Behind ConnectSphere</h2>
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="assets/images/bhoomi.jpg" alt="Bhoomi Verma" />
+        <h3>Bhoomi Verma</h3>
+        <p>
+          I’m Bhoomi Verma <br />
+          A curious mind driven by innovation and a passion for turning ideas into reality through technology and design.
+        </p><br />
+        <p><strong>Branch:</strong> Information Technology (IT)</p><br />
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/bhoomi-verma-67aa54315" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width:24px; height:24px;" />
+          </a>
+          <a href="https://github.com/Bhoomiverma23" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" style="width:24px; height:24px;" />
+          </a>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <img src="assets/images/komal.jpg" alt="Komal Bora"  />
+        <h3>Komal Bora</h3>
+        <p>
+          I’m Komal Bora <br />
+          A passionate tech enthusiast with a strong interest in innovation and emerging technologies.
+        </p><br />
+        <p><strong>Branch:</strong> Information Technology (IT)</p><br />
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/komal-bora-71611033a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width:24px; height:24px;" />
+          </a>
+          <a href="https://github.com/Komalverse" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" style="width:24px; height:24px;" />
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -104,7 +184,7 @@
   <!-- Footer -->
   <footer>
     <div class="footer-content">
-      <p>© 2025 ConnectSphere | Designed for dreamers & doers 🌍</p>
+      <p>© 2025 ConnectSphere | Designed with 💜 by dreamers & doers</p>
       <div class="social-icons">
         <a href="#"><i data-lucide="twitter"></i></a>
         <a href="#"><i data-lucide="linkedin"></i></a>
@@ -112,10 +192,14 @@
       </div>
     </div>
   </footer>
-
-  <script src="script.js"></script>
   <script>
     lucide.createIcons();
+  function toggleMenu() {
+    const navMenu = document.getElementById('navMenu');
+    navMenu.classList.toggle('active');
+  }
+  
+  lucide.createIcons();
   </script>
 </body>
 </html>

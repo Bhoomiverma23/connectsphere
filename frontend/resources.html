@@ -10,24 +10,27 @@
 </head>
 <body>
 
-  <!-- ===== Navbar ===== -->
-  <!-- ===== Navbar ===== -->
-<nav class="navbar">
+  <!-- Navbar -->
+<header class="navbar">
   <div class="logo">Connect<span>Sphere</span></div>
-
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="resources.html" class="active">Resources</a></li>
-    <li><a href="events.html">Events</a></li>
-    <li><a href="circle.html">Circle</a></li>
-  </ul>
-
+  
+  <!-- Add this mobile menu button -->
+  <button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+    ☰
+  </button>
+  
+  <nav>
+    <ul id="navMenu">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="events.html">Events</a></li>
+    </ul>
+  </nav>
   <div class="auth-buttons">
     <a href="login.html" class="btn-outline">Login</a>
     <a href="signup.html" class="btn-primary">Sign Up</a>
   </div>
-</nav>
+</header>
 
 <!-- ===== Hero Section ===== -->
 <section class="resources-hero">
@@ -62,42 +65,24 @@
       </div>
 
       <div class="resource-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/1256/1256650.png" alt="Networking Guides">
-        <h3>Networking Guides</h3>
-        <p>Learn how to connect with mentors, co-founders, and collaborators effectively.</p>
-        <a href="networking.html">Read More</a>
-      </div>
-
-      <div class="resource-card">
         <img src="https://cdn-icons-png.flaticon.com/512/2920/2920266.png" alt="Startup Tools">
         <h3>Startup Toolkit</h3>
         <p>Find templates, idea validation sheets, and pitch deck frameworks to kickstart your projects.</p>
         <a href="startup.html">View Tools</a>
       </div>
-
-      <div class="resource-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/906/906175.png" alt="Design Resources">
-        <h3>Design Resources</h3>
-        <p>Access Figma templates, color palettes, and UI kits to boost your creativity.</p>
-        <a href="design.html">Open Library</a>
-      </div>
-      </div>
-
     </div>
-    <!-- ===== Live Articles Section ===== -->
-<section id="live-articles" style="margin-top: 40px;">
-  <h2>Latest Tech & Startup Articles</h2>
-  <div id="articles-container">
-    <p>Loading articles...</p>
-  </div>
-</section>
-
+    
   </section>
 
   <!-- ===== Footer ===== -->
   <footer>
     <p>© 2025 ConnectSphere. Building meaningful connections together.</p>
   </footer>
-
+<script>
+   function toggleMenu() {
+    const navMenu = document.getElementById('navMenu');
+    navMenu.classList.toggle('active');
+  }
+</script>
 </body>
 </html>

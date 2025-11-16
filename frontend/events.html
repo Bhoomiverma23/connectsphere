@@ -1,92 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ConnectSphere - Events</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* New UI elements styling (matches your theme) */
+    .events-controls {
+      width: 90%;
+      margin: 20px auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .search-bar input {
+      padding: 10px 15px;
+      width: 280px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+
+    .filters,
+    .category-tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn,
+    .tab-btn,
+    .sort-btn {
+      padding: 8px 16px;
+      border-radius: 20px;
+      background: #f0f0f0;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .filter-btn.active,
+    .tab-btn.active,
+    .sort-btn.active {
+      background: #6c63ff;
+      color: white;
+    }
+
+    /* Login and Signup button styles */
+    .btn-outline {
+      padding: 8px 16px;
+      border: 2px solid #6c63ff;
+      border-radius: 20px;
+      background: transparent;
+      color: #6c63ff;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .btn-outline:hover {
+      background: #6c63ff;
+      color: white;
+    }
+
+    .btn-primary {
+      padding: 8px 16px;
+      border-radius: 20px;
+      background: #6c63ff;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn-primary:hover {
+      background: #5548c8;
+    }
+
+    /* Event card styles */
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .event-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgb(0 0 0 / 0.1);
+      transition: box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .event-card:hover {
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+    }
+
+    .event-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .event-card h3 {
+      margin: 15px;
+      font-size: 1.1rem;
+      color: #222;
+    }
+
+    .event-card p {
+      margin: 0 15px 15px;
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    .event-card a {
+      display: block;
+      margin: 0 15px 15px;
+      padding: 10px 0;
+      text-align: center;
+      background: #6c63ff;
+      color: white;
+      font-weight: 600;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .event-card a:hover {
+      background: #5548c8;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- ===== Navbar ===== -->
-  <nav class="navbar">
-    <div class="logo">Connect<span>Sphere</span></div>
-
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
+  <!-- Navbar -->
+<header class="navbar">
+  <div class="logo">Connect<span>Sphere</span></div>
+  
+  <!-- Add this mobile menu button -->
+  <button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+    ☰
+  </button>
+  
+  <nav>
+    <ul id="navMenu">
+      <li><a href="index.html" class="active">Home</a></li>
       <li><a href="resources.html">Resources</a></li>
-      <li><a href="events.html" class="active">Events</a></li>
-      <li><a href="circle.html">Circle</a></li>
+      <li><a href="events.html">Events</a></li>
     </ul>
-
-    <div class="auth-buttons">
-      <a href="login.html" class="btn-outline">Login</a>
-      <a href="signup.html" class="btn-primary">Sign Up</a>
-    </div>
   </nav>
+  <div class="auth-buttons">
+    <a href="login.html" class="btn-outline">Login</a>
+    <a href="signup.html" class="btn-primary">Sign Up</a>
+  </div>
+</header>
 
-  <!-- ===== Hero Section ===== -->
-  <section class="events-hero">
-    <div class="about-content">
-      <h1>Discover Events that Inspire 💡</h1>
-      <p>Join hackathons, networking sessions, and workshops to connect with visionaries like you.</p>
-    </div>
-  </section>
-
-  <!-- ===== Upcoming Events Section ===== -->
   <section class="events-section">
     <h2>Upcoming Events</h2>
     <p class="section-subtext">Stay ahead and never miss an opportunity to connect and grow.</p>
-
-    <div class="event-grid">
-
-      <div class="event-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" alt="Hackathon">
-        <h3>InnovateX Hackathon 2025</h3>
-        <p>Collaborate with creative minds to build real-world solutions. Win exciting prizes and grow your network.</p>
-        <p><strong>Date:</strong> 22–24 Nov 2025</p>
-        <a href="#">Register Now</a>
-      </div>
-
-      <div class="event-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/921/921347.png" alt="Workshop">
-        <h3>Design Thinking Workshop</h3>
-        <p>Learn how to apply user-centric design to your startup or app idea. Hosted by industry mentors.</p>
-        <p><strong>Date:</strong> 30 Nov 2025</p>
-        <a href="#">Join Workshop</a>
-      </div>
-
-      <div class="event-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/3050/3050525.png" alt="Networking Meetup">
-        <h3>Founders Connect Meetup</h3>
-        <p>Meet aspiring founders, developers, and designers in your city and build meaningful collaborations.</p>
-        <p><strong>Date:</strong> 5 Dec 2025</p>
-        <a href="#">Join Meetup</a>
-      </div>
-
-      <div class="event-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Tech Talk">
-        <h3>TechSphere Talks</h3>
-        <p>Attend a virtual session by experts from startups and tech companies on AI, design, and innovation.</p>
-        <p><strong>Date:</strong> 10 Dec 2025</p>
-        <a href="#">Reserve Spot</a>
-      </div>
-
+    <div id="eventsContainer" class="event-grid">
+      <!-- Events will load here -->
     </div>
   </section>
 
-  <!-- ===== CTA Section ===== -->
-  <section class="join">
-    <h2>Host or Join an Event</h2>
-    <p>Be part of something bigger — share your ideas, collaborate with communities, and grow your professional circle.</p>
-    <a href="#" class="btn-primary">Create Event</a>
-  </section>
-
-  <!-- ===== Footer ===== -->
   <footer>
     <p>© 2025 ConnectSphere. Connecting innovators, dreamers, and changemakers.</p>
   </footer>
 
+  <script>
+    async function loadEvents() {
+      try {
+        const res = await fetch("http://localhost:5000/api/events/upcoming");
+        if (!res.ok) throw new Error("Failed to fetch events");
+        const allEvents = await res.json();
+
+        const container = document.getElementById("eventsContainer");
+        container.innerHTML = "";
+
+        if (allEvents.length === 0) {
+          container.innerHTML = "<p>No upcoming events available.</p>";
+          return;
+        }
+
+        allEvents.forEach((event) => {
+          // Fix missing slash after .com in unstop URLs
+          const fixedLink =
+            event.link.includes("https://unstop.com") &&
+            !event.link.includes("https://unstop.com/")
+              ? event.link.replace("https://unstop.com", "https://unstop.com/")
+              : event.link;
+
+          container.innerHTML += `
+            <div class="event-card">
+              <img src="${event.image || "https://via.placeholder.com/300x160?text=No+Image"}" alt="${event.title}" />
+              <h3>${event.title}</h3>
+              <p><strong>Date:</strong> ${event.date}</p>
+              <a href="${fixedLink}" target="_blank" rel="noopener noreferrer">Go to Event</a>
+            </div>
+          `;
+        });
+      } catch (error) {
+        document.getElementById("eventsContainer").innerHTML =
+          "<p>Unable to load events 😢</p>";
+        console.error(error);
+      }
+    }
+
+    loadEvents();
+     function toggleMenu() {
+    const navMenu = document.getElementById('navMenu');
+    navMenu.classList.toggle('active');
+  }
+  </script>
 </body>
 </html>

@@ -305,13 +305,26 @@ footer {
   </footer>
   <script>
     const roadmapData = {
-  web: ["HTML → CSS → JavaScript → Git/GitHub → React → Node.js"],
-  uiux: ["Design Basics → Figma → Wireframes → Prototyping → Portfolio"],
-  ai: ["Python → NumPy/Pandas → ML Models → Projects → Kaggle"],
-  dsa: ["Arrays → Strings → Linked List → Trees → Dynamic Programming"],
-  startup: ["Idea → Validation → MVP → Funding → Launch"],
-  soft: ["Communication → Leadership → Teamwork → Presentation"],
+  web: [
+    "HTML (structure basics) → CSS (layout & styling) → JavaScript (DOM, ES6+) → Git/GitHub (version control) → React (components & hooks) → Node.js (backend basics) → Databases (MongoDB) → Deployment (Heroku, Netlify)"
+  ],
+  uiux: [
+    "Design Principles → Figma (design & prototyping) → Wireframes (low-fidelity layouts) → User Flows → Usability Testing → Portfolio Building"
+  ],
+  ai: [
+    "Python Basics → Data Handling (NumPy & Pandas) → Machine Learning Models → Deep Learning Fundamentals → Real Projects → Kaggle Competitions"
+  ],
+  dsa: [
+    "Arrays & Strings → Linked Lists → Trees → Graphs → Sorting & Searching → Dynamic Programming → Practice Problems"
+  ],
+  startup: [
+    "Idea Generation → Market Research & Validation → Build MVP → Pitch & Get Funding → Product Launch → Growth & Scaling"
+  ],
+  soft: [
+    "Communication Skills → Leadership & Motivation → Team Collaboration → Presentation Skills → Time & Stress Management"
+  ]
 };
+
 
 function showRoadmap(category) {
   const roadmapSection = document.getElementById("roadmaps");
